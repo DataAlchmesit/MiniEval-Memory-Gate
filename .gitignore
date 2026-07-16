@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+gritvenv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment secrets — never commit
+.env
+
+# Supermemory local data
+.supermemory/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Model / DB cache
+*.db
