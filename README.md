@@ -106,6 +106,11 @@ Supermemory resolves memory conflicts by recency. MiniEval Memory Gate checks fa
 A new memory earns the right to overwrite an old one **only if it's genuinely faithful to its source.** Hallucinations don't get to destroy true memories.
 
 ---
+## Dashboard
+
+<img width="1900" height="905" alt="Dahboard" src="https://github.com/user-attachments/assets/40a1f3c3-0d6e-47e2-b87d-6aecdedb69cd" />
+
+
 
 ## Setup
 
