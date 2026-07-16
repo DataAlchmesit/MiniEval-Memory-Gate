@@ -23,11 +23,15 @@ But there's a question nobody is asking:
 
 > **Who checks if the facts it stores are actually true?**
 
-When an AI extracts a memory, it can hallucinate. A conversation about a *neighbor's* cat becomes "the user has a cat." A misheard sentence becomes a fact stored **forever**. And once a false memory is in the graph, your AI recalls it with total confidence — poisoning every future response.
+Imagine your AI assistant has known you for two years. It remembers you're allergic to peanuts - a fact that could save your life. Then one day, from a passing comment about a salad, it decides you love peanuts. It overwrites the truth. The next time it orders your lunch, it puts you in danger.
 
-Worse: Supermemory resolves conflicting memories by **recency** — newest wins. But recency is dangerous. If the newest fact is a hallucination, it silently overwrites a true memory that was already stored.
+That's not science fiction. It's how AI memory works today.
 
-**MiniEval Memory Gate fixes this.** It sits between Supermemory's extraction and its storage, checking every fact for faithfulness before it's allowed into memory — and guarding true memories from being overwritten by false ones.
+Supermemory gives your AI a second brain - it extracts facts from conversations and remembers them forever. But when an AI extracts a memory, it can hallucinate. A conversation about a neighbor's cat becomes "the user has a cat." A misheard sentence becomes a fact stored permanently - and recalled with total confidence, poisoning every future response.
+
+Worse: Supermemory resolves conflicting memories by recency - newest wins. But recency is dangerous. If the newest fact is a hallucination, it silently overwrites a true memory that was already there.
+
+A second brain that remembers lies is worse than no memory at all. MiniEval Memory Gate fixes this - it checks every fact for faithfulness before it's allowed into memory, and guards true memories from being overwritten by false ones.
 
 ---
 
@@ -80,11 +84,11 @@ Tested against **80 candidate memories** across 6 fact categories:
 | **Hallucination catch rate** | **97.5%** |
 | False memories that reached storage | 0 |
 
-The gate correctly stored every genuine fact and blocked 39 of 40 planted hallucinations — flagging the one uncertain case for review rather than guessing.
+The gate correctly stored every genuine fact and blocked 39 of 40 planted hallucinations - flagging the one uncertain case for review rather than guessing.
 
 ---
 
-## The novelty — guarding overwrites
+## The novelty : guarding overwrites
 
 This is the part nobody else is building.
 
@@ -92,10 +96,10 @@ Supermemory resolves memory conflicts by recency. MiniEval Memory Gate checks fa
 
 | Existing memory | Incoming memory | Verdict | Why |
 |-----------------|-----------------|---------|-----|
-| Lives in Bangalore | Lives in Chennai *(user moved)* | ✅ **ACCEPT** | New memory is faithful — legitimate update |
-| Allergic to peanuts | Loves eating peanuts *(hallucination)* | ⛔ **BLOCK** | New memory contradicts its source — protecting the truth |
+| Lives in Bangalore | Lives in Chennai *(user moved)* | ✅ **ACCEPT** | New memory is faithful - legitimate update |
+| Allergic to peanuts | Loves eating peanuts *(hallucination)* | ⛔ **BLOCK** | New memory contradicts its source - protecting the truth |
 | Is a nurse | Is a doctor *(finished med school)* | ✅ **ACCEPT** | Faithful career change |
-| Is vegetarian | Eats meat *(hallucination)* | ⛔ **BLOCK** | Contradicts its source — protecting the truth |
+| Is vegetarian | Eats meat *(hallucination)* | ⛔ **BLOCK** | Contradicts its source - protecting the truth |
 
 A new memory earns the right to overwrite an old one **only if it's genuinely faithful to its source.** Hallucinations don't get to destroy true memories.
 
@@ -141,19 +145,19 @@ SUPERMEMORY_URL=http://localhost:6767
 
 ## Usage
 
-**Run the live memory gate** — send a conversation, gate the extracted facts:
+**Run the live memory gate** - send a conversation, gate the extracted facts:
 
 ```bash
 python memory_gate_live.py
 ```
 
-**Run the adjudicator** — see overwrites guarded in real time:
+**Run the adjudicator** - see overwrites guarded in real time:
 
 ```bash
 python adjudicate.py
 ```
 
-**Generate the dashboard** — build the audit dashboard from your decision log:
+**Generate the dashboard** - build the audit dashboard from your decision log:
 
 ```bash
 python build_dashboard.py
@@ -166,11 +170,11 @@ python build_dashboard.py
 
 ```
 minieval-memory-gate/
-├── memory_gate_live.py     # Layer 1 — live faithfulness gate on Supermemory
-├── adjudicate.py           # Layer 3 — contradiction adjudication
+├── memory_gate_live.py     # Layer 1 - live faithfulness gate on Supermemory
+├── adjudicate.py           # Layer 3 - contradiction adjudication
 ├── run_adjudication.py     # generates adjudication cases for the dashboard
 ├── generate_dataset.py     # builds a categorized test dataset
-├── build_dashboard.py      # Layer 2 — builds the audit dashboard
+├── build_dashboard.py      # Layer 2 - builds the audit dashboard
 ├── dashboard.html          # the generated enterprise dashboard
 ├── gate_audit_log.json     # decision log (every fact + verdict)
 ├── adjudication_log.json   # overwrite decisions
