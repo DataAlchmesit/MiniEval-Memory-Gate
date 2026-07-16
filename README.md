@@ -51,7 +51,9 @@ The split is deliberate: **Supermemory does the memory** (extraction, storage, r
 
 ## Architecture
 
-![Architecture](architecture.png)
+![Architecture](<<img width="924" height="632" alt="Screenshot 2026-07-16 231227" src="https://github.com/user-attachments/assets/ed4b0af9-27b1-4f3c-85f5-3e7942bd26c9" />
+>
+)
 
 ```
 Conversation
