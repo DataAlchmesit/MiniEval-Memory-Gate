@@ -110,6 +110,37 @@ A new memory earns the right to overwrite an old one **only if it's genuinely fa
 
 <img width="1900" height="905" alt="Dahboard" src="https://github.com/user-attachments/assets/40a1f3c3-0d6e-47e2-b87d-6aecdedb69cd" />
 
+## Screenshots
+
+LIVE DEMO | Layer 1 - Faithfulness Gate in action (connecting supermemory with MiniEval)
+
+
+
+<img width="600" height="432" alt="Layer 1" src="https://github.com/user-attachments/assets/57a44b65-2968-425e-bbfb-081b622c7ae8" />
+
+
+
+
+
+
+LIVE DEMO | Layer 3 - Guarding the overwrite (a hallucination blocked from replacing a true memory) 
+
+
+<img width="709" height="442" alt="screenshotsadjudication (2)" src="https://github.com/user-attachments/assets/cf82ecb0-42d9-4b01-b806-965f93a77dc8" />
+
+
+
+
+
+LIVE DEMO | Live gate on Supermemory (facts scored and stored in real time)
+
+
+
+<img width="940" height="463" alt="screenshotsadjudication" src="https://github.com/user-attachments/assets/b49fccd8-d78c-496b-8103-b5c9c347712f" />
+
+
+
+
 
 
 ## Setup
