@@ -14,6 +14,10 @@
 </div>
 
 ---
+> **The conceptual flip:** every memory system - including Supermemory's own conflict resolution - treats the *newest* fact as the truth. MiniEval treats the *most faithful* fact as the truth. Recency and truth are not the same thing, and only one of them should get to overwrite a memory.
+ 
+---
+
 
 ## The problem
 
@@ -106,6 +110,20 @@ Supermemory resolves memory conflicts by recency. MiniEval Memory Gate checks fa
 A new memory earns the right to overwrite an old one **only if it's genuinely faithful to its source.** Hallucinations don't get to destroy true memories.
 
 ---
+## Why this is differentiated
+ 
+The market has the pieces, but not this specific combination:
+ 
+| Category | Examples | What's missing |
+|---|---|---|
+| **Output validation** | Guardrails AI, TruLens | Validates at query-time - doesn't gate what gets *written into long-term memory* |
+| **LLM observability** | Arize Phoenix and similar | Observes drift and quality *after the fact* - doesn't block a hallucination before it's stored |
+| **Memory engines with conflict resolution** | Supermemory, Mem0, Zep | Resolve conflicts by **recency** - the same gap MiniEval exists to close |
+ 
+Nobody combines **gate-before-write** with **evidence-based conflict resolution** for AI memory specifically. That's the gap MiniEval Memory Gate fills.
+
+
+
 ## Dashboard
 
 <img width="1900" height="905" alt="Dahboard" src="https://github.com/user-attachments/assets/40a1f3c3-0d6e-47e2-b87d-6aecdedb69cd" />
